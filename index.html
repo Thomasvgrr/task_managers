@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestionnaire de tâches et de projets</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>Gestionnaire de tâches et de projets</h1>
+  <button id="btnAddTask">Ajouter une tâche</button>
+</nav>
+
+
+<main>
+
+  <section id="tasks">
+    <h2>Liste des tâches</h2>
+    <ul id="taskList">
+     
+    </ul>
+  </section>
+
+ 
+  <section id="projects">
+    <h2>Liste des projets</h2>
+    <ul id="projectList">
+      
+    </ul>
+  </section>
+</main>
+
+
+<div id="taskModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Ajouter une tâche</h2>
+    <form id="taskForm">
+      <label for="taskTitle">Titre :</label>
+      <input type="text" id="taskTitle" name="taskTitle" required>
+      <label for="taskDescription">Description :</label>
+      <textarea id="taskDescription" name="taskDescription"></textarea>
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+ 
+</script>
+</body>
+</html>
