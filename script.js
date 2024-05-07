@@ -29,3 +29,25 @@ taskForm.addEventListener('submit', (e) => {
     alert('Veuillez saisir un titre pour la tâche.');
   }
 });
+
+// Fonction pour exporter les tâches au format CSV
+function exportToCSV() {
+    const tasks = [];
+    const taskItems = document.querySelectorAll('#taskList li');
+    taskItems.forEach((taskItem) => {
+      const [title, description] = taskItem.textContent.split(' - ');
+      tasks.push([title, description]);
+    });
+  
+    const csvContent = tasks.map((task) => task.join(',')).join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'tasks.csv');
+    document.body.appendChild(link);
+    link.click();
+  }
+  
+  // Événement pour déclencher l'exportation vers CSV
+  document.getElementById('exportCSV').addEventListener('click', exportToCSV);
